@@ -46,7 +46,7 @@ router.post("/", validateContact, async (req, res) => {
           pass: process.env.NODEMAILER_PASS,
         },
       });
-
+      //handle email sending errors gracefully
       await transporter.sendMail({
         from: process.env.NODEMAILER_EMAIL,
         to: process.env.NODEMAILER_EMAIL, // Send to yourself, or change to admin email
